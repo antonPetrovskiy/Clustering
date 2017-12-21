@@ -97,11 +97,116 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void findCentre(){
+        EditText x17 = (EditText)findViewById(R.id.editText17);
+        EditText x18 = (EditText)findViewById(R.id.editText18);
+        EditText x19 = (EditText)findViewById(R.id.editText19);
+        EditText x20 = (EditText)findViewById(R.id.editText20);
+        EditText x21 = (EditText)findViewById(R.id.editText21);
+        EditText x22 = (EditText)findViewById(R.id.editText22);
+        EditText x23 = (EditText)findViewById(R.id.editText23);
+        EditText x24 = (EditText)findViewById(R.id.editText24);
+
+        double all1 = 0;
+        double all2 = 0;
+        double x1sum = 0;
+        double y1sum = 0;
+        double x2sum = 0;
+        double y2sum = 0;
+
+
+
+        if(Integer.parseInt(x17.getText().toString())<=1){
+            x1sum+=x1;
+            y1sum+=y1;
+            all1+=1;
+        }else{
+            x2sum+=x1;
+            y2sum+=y1;
+            all2+=1;
+        }
+        if(Integer.parseInt(x18.getText().toString())<=1){
+            x1sum+=x2;
+            y1sum+=y2;
+            all1+=1;
+        }else{
+            x2sum+=x2;
+            y2sum+=y2;
+            all2+=1;
+        }
+        if(Integer.parseInt(x19.getText().toString())<=1){
+            x1sum+=x3;
+            y1sum+=y3;
+            all1+=1;
+        }else{
+            x2sum+=x3;
+            y2sum+=y3;
+            all2+=1;
+        }
+        if(Integer.parseInt(x20.getText().toString())<=1){
+            x1sum+=x4;
+            y1sum+=y4;
+            all1+=1;
+        }else{
+            x2sum+=x4;
+            y2sum+=y4;
+            all2+=1;
+        }
+        if(Integer.parseInt(x21.getText().toString())<=1){
+            x1sum+=x5;
+            y1sum+=y5;
+            all1+=1;
+        }else{
+            x2sum+=x5;
+            y2sum+=y5;
+            all2+=1;
+        }
+        if(Integer.parseInt(x22.getText().toString())<=1){
+            x1sum+=x6;
+            y1sum+=y6;
+            all1+=1;
+        }else{
+            x2sum+=x6;
+            y2sum+=y6;
+            all2+=1;
+        }
+        if(Integer.parseInt(x23.getText().toString())<=1){
+            x1sum+=x7;
+            y1sum+=y7;
+            all1+=1;
+        }else{
+            x2sum+=x7;
+            y2sum+=y7;
+            all2+=1;
+        }
+        if(Integer.parseInt(x24.getText().toString())<=1){
+            x1sum+=x8;
+            y1sum+=y8;
+            all1+=1;
+        }else{
+            x2sum+=x8;
+            y2sum+=y8;
+            all2+=1;
+        }
+
+        /*centr_x1 = (x1+x2+x3+x4)/4;
+        centr_x2 = (x5+x6+x7+x8)/4;
+        centr_y1 = (y1+y2+y3+y4)/4;
+        centr_y2 = (y5+y6+y7+y8)/4;*/
+        centr_x1 = x1sum/all1;
+        centr_x2 = x2sum/all2;
+        centr_y1 = y1sum/all1;
+        centr_y2 = y2sum/all2;
+
+        EditText centreX1 = (EditText)findViewById(R.id.editText97);
+        EditText centreY1 = (EditText)findViewById(R.id.editText98);
+        centreX1.setText(Double.toString(centr_x1));
+        centreY1.setText(Double.toString(centr_y1));
+    }
+
     public void iteration_1(){
-        centr_x1 = x1;
-        centr_x2 = x2;
-        centr_y1 = y1;
-        centr_y2 = y2;
+
+        findCentre();
 
         EditText x25 = (EditText)findViewById(R.id.editText25);
         EditText x26 = (EditText)findViewById(R.id.editText26);
@@ -249,10 +354,7 @@ public class MainActivity extends AppCompatActivity {
         centr_y1 = y1sum/all1;
         centr_y2 = y2sum/all2;
 
-        EditText centreX1 = (EditText)findViewById(R.id.editText97);
-        EditText centreY1 = (EditText)findViewById(R.id.editText98);
-        centreX1.setText(Double.toString(centr_x2));
-        centreY1.setText(Double.toString(centr_y2));
+
     }
     public void iteration_2(){
 
